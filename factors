@@ -12,9 +12,9 @@ def eculid(a, b):
         remainder = a % b
         a = b
         b = remainder
-    if a == 1:
+    if a == 1 or f//a == 1:
         return False
-    print(f"{f}={f//a}*{a}")
+    print(f"{f}={a}*{f//a}")
     return True
 
 
@@ -38,7 +38,6 @@ with open("test", "r") as a_file:
             if result is True:
                 break
             if y == x:
-                print("LOOP")
                 break
             n += 1
 a_file.close()

@@ -38,7 +38,6 @@ with open("test", "r") as a_file:
             if result is True:
                 break
             if y == x:
-                print("LOOP")
                 break
             n += 1
 a_file.close()

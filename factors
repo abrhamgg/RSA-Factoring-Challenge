@@ -17,7 +17,7 @@ with open("test", "r") as a_file:
         strip = int(line.strip())
         for i in range(2, strip):
             if strip % i == 0:
-                val = int(strip / i)
+                val = int(strip // i)
                 print("{}={}*{}".format(strip, val, i))
                 break
 a_file.close()

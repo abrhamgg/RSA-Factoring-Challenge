@@ -42,5 +42,3 @@ with open("test", "r") as a_file:
                 break
             n += 1
 a_file.close()
-
-

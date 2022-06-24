@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import sys
 def g(x1, num):
     return ((x1 ** 2) + 1) % num
 
@@ -18,7 +19,7 @@ def eculid(a, b):
     return True
 
 
-with open("test", "r") as a_file:
+with open(sys.argv[1], "r") as a_file:
     for line in a_file:
         f = int(line.strip())
         x = 0

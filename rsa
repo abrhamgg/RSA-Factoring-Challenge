@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 import sys
-
-
 def g(x1, num):
     return ((x1 ** 2) + 1) % num
 
@@ -22,14 +20,8 @@ def eculid(a, b):
 
 
 with open(sys.argv[1], "r") as a_file:
-    f = int(a_file.readline().strip())
-    if f < 10:
-        for i in range(2, f):
-            if f % i == 0:
-                val = int(f / i)
-                print("{}={}*{}".format(f, val, i))
-                break
-    else:
+    for line in a_file:
+        f = int(line.strip())
         x = 0
         y = 0
         n = 1
@@ -38,10 +30,15 @@ with open(sys.argv[1], "r") as a_file:
             if y == 0 and x == 0:
                 x = g(x, f)
                 y = g(y, f)
-            continue
-        else:
-            x = g(x, f)
-            y = gg(y, f)
-        z = abs(y - x)
-        result = eculid(z, f)
+                continue
+            else:
+                x = g(x, f)
+                y = gg(y, f)
+            z = abs(y - x)
+            result = eculid(z, f)
+            if result is True:
+                break
+            if y == x:
+                break
+            n += 1
 a_file.close()
